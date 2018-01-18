@@ -8,7 +8,7 @@ namespace Web.Tests
         [Fact]
         public void Test1()
         {
-
+            Assert.True(true, "The result is true");
         }
     }
 }
