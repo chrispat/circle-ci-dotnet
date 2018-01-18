@@ -5,5 +5,5 @@ jobs:
       - image: microsoft/aspnetcore-build
     steps:
       - checkout
-      - run: cd web && npm install && cd ..
+      - run: cd Web && npm install && cd ..
       - run: dotnet build
