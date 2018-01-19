@@ -23,6 +23,6 @@ workflows:
   build-n-test:
     jobs:
       - build:
-      - publis-tests:
+      - publish-tests:
           requires:
             - build
