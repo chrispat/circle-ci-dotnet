@@ -7,4 +7,22 @@ jobs:
       - checkout
       - run: cd Web && npm install && cd ..
       - run: dotnet build
-      - run: cd Web.Tests && dotnet test
+      - run: cd Web.Tests && dotnet test -r output/test-results
+      - persist_to_workspace:
+        root: output
+        paths:
+        - test-results
+  publish-tests:
+    steps:
+    - attach_workspace:
+      at: /temp/output
+    - run: echo "Publish tests"
+
+workflows:
+  version: 2
+  build-n-test:
+    jobs:
+    - build:
+    - publis-tests:
+      requires:
+      - build
