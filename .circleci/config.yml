@@ -22,7 +22,7 @@ workflows:
   version: 2
   build-n-test:
     jobs:
-    - build:
-    - publis-tests:
-      requires:
-      - build
+      - build:
+      - publis-tests:
+          requires:
+            - build
