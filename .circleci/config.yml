@@ -7,3 +7,4 @@ jobs:
       - checkout
       - run: cd Web && npm install && cd ..
       - run: dotnet build
+      - run: cd Web.Tests && dotnet test
