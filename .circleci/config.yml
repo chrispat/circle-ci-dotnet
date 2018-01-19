@@ -13,6 +13,8 @@ jobs:
         paths:
         - test-results
   publish-tests:
+    docker:
+      - image: microsoft/aspnetcore-build
     steps:
     - attach_workspace:
       at: /temp/output
